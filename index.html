@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="IMNOIR presents Haiti Since Independence: an interactive visual history from 1804 to the present." />
+  <meta name="theme-color" content="#080808" />
+  <title>IMNOIR | Haiti Since Independence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scroll-progress" aria-hidden="true"><span id="scrollProgress"></span></div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="IMNOIR home">
+      <span class="brand-im">IM</span><span>NOIR</span>
+      <small>I AM BLACK</small>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#story">Story</a>
+      <a href="#eras">Eras</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#sources">Sources</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    <a href="#story">Story</a>
+    <a href="#eras">Eras</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#sources">Sources</a>
+  </nav>
+
+  <main>
+    <section class="hero" id="story">
+      <div class="hero-media" aria-hidden="true">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Citadelle%20Laferri%C3%A8re%20Aerial%20View.jpg?width=1800" alt="" onerror="this.style.display='none'">
+        <div class="hero-scrim"></div>
+      </div>
+      <div class="hero-copy reveal">
+        <p class="eyebrow">IMNOIR • PEOPLE • HISTORY • CULTURE • RESILIENCE • THE FUTURE</p>
+        <h1>Haiti Since Independence</h1>
+        <p class="dek">Freedom, debt, power, intervention, culture, catastrophe and the continuing fight to build a nation.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#eras">Enter the story</a>
+          <button class="button ghost" id="openOverview">Explore overview</button>
+        </div>
+        <div class="hero-stats" aria-label="Story overview">
+          <div><strong>8</strong><span>Major eras</span></div>
+          <div><strong>1804</strong><span>Independence</span></div>
+          <div><strong>2026</strong><span>Story continues</span></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#eras" aria-label="Scroll to eras">Scroll ↓</a>
+    </section>
+
+    <section class="intro-band reveal">
+      <p class="eyebrow">THE IDEA</p>
+      <h2>Not a timeline of tragedy. A history of a people who repeatedly defended sovereignty.</h2>
+      <p>Each chapter below is a full article. Open the visual gallery, expand key facts, move between eras, and follow the story without leaving the page.</p>
+    </section>
+
+    <section class="eras" id="eras" aria-labelledby="erasTitle">
+      <div class="section-heading reveal">
+        <p class="eyebrow">EIGHT FULL CHAPTERS</p>
+        <h2 id="erasTitle">The Story</h2>
+        <p>Select any era. Each section contains a long-form article, a visual gallery, key figures, context, and a direct path to the next chapter.</p>
+      </div>
+      <div class="era-jump" id="eraJump" aria-label="Jump to era"></div>
+      <div id="eraArticles"></div>
+    </section>
+
+    <section class="timeline" id="timeline">
+      <div class="section-heading reveal">
+        <p class="eyebrow">QUICK REFERENCE</p>
+        <h2>Timeline</h2>
+        <p>A compact path through the same eight chapters.</p>
+      </div>
+      <div class="timeline-grid" id="timelineGrid"></div>
+    </section>
+
+    <section class="sources" id="sources">
+      <div class="section-heading reveal">
+        <p class="eyebrow">RESEARCH NOTES</p>
+        <h2>Selected sources</h2>
+        <p>IMNOIR is interpretive educational content. Dates, figures and current-event descriptions should continue to be updated as scholarship and events develop.</p>
+      </div>
+      <div class="source-grid">
+        <a href="https://history.state.gov/countries/haiti" target="_blank" rel="noopener">U.S. Office of the Historian — Haiti</a>
+        <a href="https://history.state.gov/milestones/1914-1920/haiti" target="_blank" rel="noopener">U.S. Office of the Historian — Occupation of Haiti</a>
+        <a href="https://www.usgs.gov/programs/earthquake-hazards/science/2010-haiti-earthquake" target="_blank" rel="noopener">USGS — 2010 Haiti earthquake</a>
+        <a href="https://www.un.org/sg/en/content/former-secretary-general/statements/2016-12-01/secretary-generals-remarks-the-general-assembly-new-approach-address-cholera-haiti" target="_blank" rel="noopener">United Nations — Haiti cholera response</a>
+        <a href="https://www.reuters.com/world/americas/un-renews-haiti-force-mandate-six-months-after-fresh-gang-killings-2026-09-29/" target="_blank" rel="noopener">Reuters — Haiti security situation, Sept. 29, 2026</a>
+        <a href="https://commons.wikimedia.org/" target="_blank" rel="noopener">Wikimedia Commons — historical images</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="overview-dialog" id="overviewDialog">
+    <button class="dialog-close" data-close-dialog aria-label="Close overview">×</button>
+    <p class="eyebrow">IMNOIR</p>
+    <h2>How to explore</h2>
+    <p>Scroll through each full chapter, use the chapter selector to jump across time, click any photograph to enlarge it, and expand the fact panels for additional context.</p>
+    <div class="overview-grid">
+      <div><strong>01</strong><span>Read the article</span></div>
+      <div><strong>02</strong><span>Open the gallery</span></div>
+      <div><strong>03</strong><span>Expand key facts</span></div>
+      <div><strong>04</strong><span>Continue to the next era</span></div>
+    </div>
+  </dialog>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">←</button>
+    <figure>
+      <img id="lightboxImage" alt="" />
+      <figcaption id="lightboxCaption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">→</button>
+  </div>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <footer>
+    <div><strong>IMNOIR</strong><span>I AM BLACK</span></div>
+    <p>History belongs to the people who remember it.</p>
+    <a href="#top">Back to top ↑</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
